@@ -39,7 +39,7 @@ class BaseModel:
 
     def save(self):
         """Updates the current datetime and saves the instance."""
-        self.updated_at = datetime.now
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """Returns a dictionary representation of the BaseModel instance."""
