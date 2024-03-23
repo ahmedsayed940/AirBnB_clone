@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines all common attributes/methods for other classes.
 """
-import models import storage
+from models import storage
 import uuid
 from datetime import datetime
 
