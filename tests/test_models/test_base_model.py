@@ -45,5 +45,13 @@ class TestBaseModel(unittest.TestCase):
         self.assertIn(my_model.id, str(my_model))
         self.assertIn(str(my_model.__dict__), str(my_model))
 
+    def test_uuid(self):
+        """Tests uuid.
+        """
+        self.assertNotEqual(self.base1.id, self.base2.id)
+        self.assertTrue(hasattr(self.base1, "id"))
+        self.assertEqual(type(self.base1.id), str)
+        self.assertEqual(type(self.base2.id), str)
+
 if __name__ == '__main__':
     unittest.main()
