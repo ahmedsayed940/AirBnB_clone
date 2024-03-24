@@ -45,6 +45,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertIn(my_model.id, str(my_model))
         self.assertIn(str(my_model.__dict__), str(my_model))
 
+<<<<<<< HEAD
     def test_uuid(self):
         """Tests uuid.
         """
@@ -54,5 +55,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(type(self.base2.id), str)
 
 
+=======
+>>>>>>> parent of a300afd... Added uuid test
 if __name__ == '__main__':
     unittest.main()
