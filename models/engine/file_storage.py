@@ -4,7 +4,7 @@
 
 from models.base_model import BaseModel
 import json
-
+from models.user import User
 
 class FileStorage:
     """Serializes instances to a JSON file and deserializes
