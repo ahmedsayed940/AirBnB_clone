@@ -74,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
             if key not in objs:
                 print("** no instance found **")
             else:
-                del objects[key]
+                del objs[key]
                 storage.save()
 
     def do_all(self, arg):
@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
         cmds = shlex.split(arg)
 
         if len(cmds) == 0:
-            for key, value in ojbs.items():
+            for key, value in objs.items():
                 print(str(value))
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist**")
@@ -105,7 +105,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(cmds) == 1:
             print("** instance id missing **")
         else:
-            objs = stroage.all()
+            objs = storage.all()
 
             key = "{}.{}".format(cmds[0], cmds[1])
             if key not in objs:
@@ -122,7 +122,7 @@ class HBNBCommand(cmd.Cmd):
 
                 try:
                     attr_value = eval(attr_value)
-                except Execption:
+                except Exception:
                     pass
                 setattr(obj, attr_name, attr_value)
 
