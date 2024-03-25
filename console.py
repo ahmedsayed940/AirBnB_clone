@@ -80,10 +80,23 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """Prints all string representation of all instances
         based or not on the class name."""
+        objs = storage.all
+        cmds = shlex.split(arg)
+
+        if len(cmds) == 0:
+            for key, value in ojs.items():
+                print(str(value))
+        elif cmds[0] not in self.valid_classes:
+            print("** class doesn't exist**")
+        else:
+            for key, value in objs.items():
+                if key.split('.')[0] == cmds[0]
+                print(str(value))
+
     def do_update(self, arg):
         """pdates an instance based on the class name and id
         by adding or updating attribute."""
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     HBNBCommand().cmdloop()
