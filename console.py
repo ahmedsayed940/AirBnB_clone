@@ -23,13 +23,13 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """An empty line + ENTER shouldn’t execute anything."""
         pass
-    
+
     def do_create(self, arg):
         """Creates a new instance of BaseModel, saves it and prints the id."""
         cmds = shlex.split(arg)
 
         if len(cmds) == 0:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist**")
         else:
@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
         cmds = shlex.split(arg)
 
         if len(cmds) == 0:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist**")
         elif len(cmds) == 1:
