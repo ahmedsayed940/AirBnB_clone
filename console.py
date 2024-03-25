@@ -51,14 +51,24 @@ class HBNBCommand(cmd.Cmd):
         else:
             objs = storage.all()
 
-        key = "{}.{}".format(cmds[0], cmds[1])
-        if key not in objs:
-            print("** no instance found **")
-        else:
-            print(models.storage.all()[key])
+            key = "{}.{}".format(cmds[0], cmds[1])
+            if key not in objs:
+                print("** no instance found **")
+            else:
+                print(models.storage.all()[key])
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id."""
+        cmds = shlex.split(arg)
+
+        if len(cmds) == 0:
+            print("** class name missing **")
+        elif cmds[0] not in self.valid_classes:
+            print("** class doesn't exist**")
+        elif len(cmds) == 1:
+            print("** instance id missing **")
+        else:
+            objs = storage.all()
     def do_all(self, arg):
         """Prints all string representation of all instances
         based or not on the class name."""
