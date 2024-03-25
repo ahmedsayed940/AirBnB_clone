@@ -10,7 +10,7 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand."""
     prompt = "(hbnb)"
-    valid_classes = ["BaseModel"]
+    valid_classes = {"BaseModel"}
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
