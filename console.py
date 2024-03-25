@@ -55,7 +55,7 @@ class HBNBCommand(cmd.Cmd):
             if key not in objs:
                 print("** no instance found **")
             else:
-                print(models.storage.all()[key])
+                print(storage.all()[key])
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id."""
