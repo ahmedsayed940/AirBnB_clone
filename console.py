@@ -98,5 +98,5 @@ class HBNBCommand(cmd.Cmd):
         by adding or updating attribute."""
 
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     HBNBCommand().cmdloop()
