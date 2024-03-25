@@ -96,6 +96,37 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         """pdates an instance based on the class name and id
         by adding or updating attribute."""
+        cmds = shlex.split(arg)
+
+        if len(cmds) == 0:
+            print("** class name missing **")
+        elif cmds[0] not in self.valid_classes:
+            print("** class doesn't exist**")
+        elif len(cmds) == 1:
+            print("** instance id missing **")
+        else:
+            objs = stroage.all()
+
+            key = "{}.{}".format(cmds[0], cmds[1])
+            if key not in objs:
+                print("** no instance found **")
+            elif len(cmds) < 3:
+                print("** attribute name missing **")
+            elif len(cmds) < 4:
+                print("** value missing **")
+            else:
+                obj = objs[key]
+
+                attr_name = cmds[2]
+                attr_value = cmds[3]
+
+                try:
+                    attr_value = eval(attr_value)
+                except Execption:
+                    pass
+                setattr(obj, attr_name, attr_value)
+
+                obj.save()
 
 
 if __name__ == '__main__':
