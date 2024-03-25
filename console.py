@@ -69,6 +69,14 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             objs = storage.all()
+
+            key = "{}.{}".format(cmds[0], cmds[1])
+            if key not in objs:
+                print("** no instance found **")
+            else:
+                del objects[key]
+                storage.save()
+
     def do_all(self, arg):
         """Prints all string representation of all instances
         based or not on the class name."""
