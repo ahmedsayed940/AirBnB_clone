@@ -40,7 +40,20 @@ class HBNBCommand(cmd.Cmd):
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
-            new_instance = eval(cmds[0])()
+            if cmds[0] == "BaseModel":
+                new_instance = BaseModel()
+            elif cmds[0] == "User":
+                new_instance = User()
+            elif cmds[0] == "Place":
+                new_instance = Place()
+            elif cmds[0] == "State":
+                new_instance = State()
+            elif cmds[0] == "City":
+                new_instance = City()
+            elif cmds[0] == "Amenity":
+                new_instance = Amenity()
+            elif cmds[0] == "Review":
+                new_instance = Review()
             new_instance.save()
             print(new_instance.id)
 
@@ -135,4 +148,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
