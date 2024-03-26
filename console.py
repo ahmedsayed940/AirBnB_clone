@@ -19,6 +19,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """Exits the program."""
+        print()
         return True
 
     def emptyline(self):
@@ -47,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist**")
-        elif len(cmds) == 1:
+        elif len(cmds) < 1:
             print("** instance id missing **")
         else:
             objs = storage.all()
@@ -66,7 +67,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist**")
-        elif len(cmds) == 1:
+        elif len(cmds) < 2:
             print("** instance id missing **")
         else:
             objs = storage.all()
@@ -103,7 +104,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist**")
-        elif len(cmds) == 1:
+        elif len(cmds) < 2:
             print("** instance id missing **")
         else:
             objs = storage.all()
