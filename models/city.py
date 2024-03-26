@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""Moudle of City inherit from BaseModel.
-"""
+"""Module defining the City class, inheriting from BaseModel."""
 
 from models import BaseModel
 
 
 class City(BaseModel):
-    """Class City that inherits from BaseModel."""
+    """A class to represent a city.
+
+    Attributes:
+        state_id (str): The ID of the state to which the city belongs.
+        name (str): The name of the city.
+    """
     state_id = ""
     name = ""
