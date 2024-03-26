@@ -2,7 +2,7 @@
 """Moudle of State inherit from BaseModel.
 """
 
-from models import BaseModel
+from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
