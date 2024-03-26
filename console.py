@@ -16,7 +16,9 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand."""
     prompt = "(hbnb)"
-    valid_classes = {"BaseModel", "User", "Place", "State", "City", "Amenity", "Review"}
+    valid_classes = {
+            "BaseModel", "User", "Place", "State", "City", "Amenity", "Review"
+        }
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
