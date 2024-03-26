@@ -1,25 +1,22 @@
 #!/usr/bin/python3
-"""Moudle for console.
-"""
+"""Module for console."""
 
 import cmd
 import shlex
 from models.base_model import BaseModel
 from models.user import User
-from models import storage
 from models.place import Place
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
+from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
     """HBNBCommand."""
     prompt = "(hbnb)"
-    valid_classes = {
-        "BaseModel", "User", "Place", "State", "City", "Amenity", "Review"
-    }
+    valid_classes = {"BaseModel", "User", "Place", "State", "City", "Amenity", "Review"}
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
@@ -35,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Creates a new instance of BaseModel, saves it and prints the id."""
+        """Creates a new instance of a class, saves it, and prints the id."""
         cmds = shlex.split(arg)
 
         if len(cmds) == 0:
@@ -43,16 +40,12 @@ class HBNBCommand(cmd.Cmd):
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
-            if cmds[0] == "BaseModel":
-                new_instance = BaseModel()
-            elif cmds[0] == "User":
-                new_instance = User()
+            new_instance = eval(cmds[0])()
             new_instance.save()
             print(new_instance.id)
 
     def do_show(self, arg):
-        """Prints the string representation of an instance
-        based on the class name and id."""
+        """Prints the string representation of an instance."""
         cmds = shlex.split(arg)
 
         if len(cmds) == 0:
@@ -91,8 +84,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
     def do_all(self, arg):
-        """Prints all string representation of all instances
-        based or not on the class name."""
+        """Prints all string representation of all instances."""
         objs = storage.all()
         cmds = shlex.split(arg)
 
@@ -107,8 +99,7 @@ class HBNBCommand(cmd.Cmd):
                     print(str(value))
 
     def do_update(self, arg):
-        """pdates an instance based on the class name and id
-        by adding or updating attribute."""
+        """Updates an instance based on the class name and id."""
         cmds = shlex.split(arg)
 
         if len(cmds) == 0:
@@ -144,3 +135,4 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+
