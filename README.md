@@ -78,5 +78,5 @@ Here are some examples of using the console to perform various actions:
 
 #### Authors
 
-- [Abdullah Hussein]
-- [Ahmed Sayed Salih Sayed]
+- Abdullah Hussein
+- Ahmed Sayed Salih Sayed
