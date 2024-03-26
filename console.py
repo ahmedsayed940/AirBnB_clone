@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
             print("** class doesn't exist**")
-        elif len(cmds) < 1:
+        elif len(cmds) < 2:
             print("** instance id missing **")
         else:
             objs = storage.all()
