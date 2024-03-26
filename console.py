@@ -131,8 +131,8 @@ class HBNBCommand(cmd.Cmd):
                 obj.save()
 
         def do_help(self, arg):
-        """Display help message."""
-        cmd.Cmd.do_help(self, arg)
+            """Display help message."""
+            cmd.Cmd.do_help(self, arg)
 
 
 if __name__ == '__main__':
