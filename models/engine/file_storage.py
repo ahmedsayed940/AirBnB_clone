@@ -35,8 +35,8 @@ class FileStorage:
             with open(FileStorage.__file_path) as f:
                 objdict = json.load(f)
                 for key, value in objdict.items():
-                    cls_name = val["class"]
-                    del val["class"]
+                    cls_name = val["__class__"]
+                    del val["__class__"]
                     obj_id = key.split('.')[1]
                     if cls_name == "BaseModel":
                         self.new(BaseModel(**val))
