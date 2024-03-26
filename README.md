@@ -6,7 +6,7 @@ This project is part of the ALX SE Programme and aims to build a simplified vers
 ## Description of the Command Interpreter
 The command interpreter, or console, is a Python script that serves as the primary interface for interacting with the AirBnB clone application. It provides a set of commands to perform various actions such as creating, updating, deleting, and displaying instances of different classes within the application.
 
-### How to Start the ConsoleHow to Use the ConsoleOnce the console is started, you can use it to interact with the AirBnB clone application. Here are some basic commands and usage instructions:
+### How to Start the Console, How to Use the Console, Once the console is started, you can use it to interact with the AirBnB clone application. Here are some basic commands and usage instructions:
 To start the console, follow these steps:
 1. Clone the AirBnB clone repository to your local machine.
 2. Navigate to the directory containing the console script (`console.py`).
@@ -19,7 +19,9 @@ Once the console is started, you can use it to interact with the AirBnB clone ap
 
 ## Creating an Instance:
 To create a new instance of a class, use the create command followed by the class name. For example:
+'''bash
 (hbnb) create BaseModel
+'''
 
 ## Showing an Instance:
 To display the details of a specific instance, use the show command followed by the class name and instance ID. For example:
