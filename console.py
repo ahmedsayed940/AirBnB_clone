@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
         if len(cmds) == 0:
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
-            print("** class doesn't exist**")
+            print("** class doesn't exist **")
         else:
             new_instance = BaseModel()
             new_instance.save()
@@ -47,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
         if len(cmds) == 0:
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
-            print("** class doesn't exist**")
+            print("** class doesn't exist **")
         elif len(cmds) < 2:
             print("** instance id missing **")
         else:
@@ -57,7 +57,7 @@ class HBNBCommand(cmd.Cmd):
             if key not in objs:
                 print("** no instance found **")
             else:
-                print(storage.all()[key])
+                print(objs[key])
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and id."""
@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
         if len(cmds) == 0:
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
-            print("** class doesn't exist**")
+            print("** class doesn't exist **")
         elif len(cmds) < 2:
             print("** instance id missing **")
         else:
@@ -89,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
             for key, value in objs.items():
                 print(str(value))
         elif cmds[0] not in self.valid_classes:
-            print("** class doesn't exist**")
+            print("** class doesn't exist **")
         else:
             for key, value in objs.items():
                 if key.split('.')[0] == cmds[0]:
@@ -103,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
         if len(cmds) == 0:
             print("** class name missing **")
         elif cmds[0] not in self.valid_classes:
-            print("** class doesn't exist**")
+            print("** class doesn't exist **")
         elif len(cmds) < 2:
             print("** instance id missing **")
         elif len(cmds) < 3:
