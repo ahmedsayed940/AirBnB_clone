@@ -23,6 +23,7 @@ To create a new instance of a class, use the create command followed by the clas
 
 ## Showing an Instance:
 To display the details of a specific instance, use the show command followed by the class name and instance ID. For example:
+```python
 (hbnb) show BaseModel 1234-5678
 
 ## Deleting an Instance:
